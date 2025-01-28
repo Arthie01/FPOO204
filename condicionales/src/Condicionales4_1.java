@@ -19,9 +19,9 @@ public class Condicionales4_1 {
             System.out.print("Contraseña correcta");
         } else{
             System.out.println("Contraseña incorrecta");
+    
         }
 
-        
-
+        sc.close();
     }
 }
