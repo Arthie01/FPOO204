@@ -75,7 +75,7 @@ public class Main {
         System.out.println(10<=9);
         System.out.println(10!=9);
 
-        int x = 3:
+        int x = 3;
         System.out.println(x < 5 && x>10);
         System.out.println(x < 5 || x>10);
         System.out.println(!(x < 5  && x>10));
