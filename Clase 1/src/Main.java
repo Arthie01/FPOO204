@@ -8,6 +8,8 @@ public class Main {
     //CLse principal
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
 
         //2.- Cadenas con java
 
@@ -79,6 +81,8 @@ public class Main {
         System.out.println(x < 5 && x>10);
         System.out.println(x < 5 || x>10);
         System.out.println(!(x < 5  && x>10));
+
+        sc.close();
 
     }
 }
