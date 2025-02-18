@@ -41,10 +41,7 @@ public class Cuenta {
             JOptionPane.showMessageDialog(null, "Saldo insuficiente", "Transeferencias", JOptionPane.NO_OPTION);
         }
         
-    }
-
-    
-
+    }    
 
     }
 
