@@ -2,48 +2,37 @@ public class Main {
     
     public static void main(String[] args) {
         //Creamos objeto = instanciar objeto;
-        Spartan jefeMaestro = new Spartan();
-        Spartan reach = new Spartan();
-
+        Spartan jefeMaestro = new Spartan("jefe Maestro", 100, 100, "Rifle de asalto");
+        Spartan reach = new Spartan("Emile", 0, 0, "Escopeta");
 
 
     //---------------------------------------------------------------------------------------------------
-        //Asignamos los atributos del objeto
-        jefeMaestro.nombre = "John 117";
-        jefeMaestro.salud = 100;
-        jefeMaestro.escudo = 90;
-        jefeMaestro.armaPrincipal = "Rifle de asalto";
-        
-
         //Usar metodos
         jefeMaestro.mostrarInfo();
         jefeMaestro.atacarEnemigo("Grunt");
         jefeMaestro.recargarArma(65);
         jefeMaestro.correr(true);
     //---------------------------------------------------------------------------------------------------
-
         System.out.println();
         System.out.println();
-
+        System.out.println();
     //---------------------------------------------------------------------------------------------------
-
-    //Asignamos los atributos del objeto
- 
-        reach.nombre = "Jun";
-        reach.salud = 100;
-        reach.escudo = 100;
-        reach.armaPrincipal = "Rifle de precisión";
-        
-
         //Usar metodos
         reach.mostrarInfo();
         reach.atacarEnemigo("Elite");
         reach.recargarArma(30);
-        reach.correr(true);
-
+        reach.correr(false);
     //---------------------------------------------------------------------------------------------------
+    System.out.println();
+    System.out.println();
 
 
+    //Ejemplo de get y set con mi nombre
+
+    jefeMaestro.setNombre("Artemio");
+    jefeMaestro.mostrarInfo();
+    System.out.println(jefeMaestro.getNombre());
+    
 
     }
 }
