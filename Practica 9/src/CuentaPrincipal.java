@@ -4,22 +4,9 @@ import javax.swing.JOptionPane;
 public class CuentaPrincipal {
 
     public static void main(String[] args) {
-        Cuenta cuenta1 = new Cuenta();
-        Cuenta cuenta2 = new Cuenta();
+        Cuenta cuenta1 = new Cuenta(123456789, "Artemio", 20, 500);
+        Cuenta cuenta2 = new Cuenta(223456789, "Joaquin", 20, 3000);
         int op;
-
-
-        cuenta1.numeroCuenta = 123456789;
-        cuenta1.nombre = "Artemio";
-        cuenta1.edad = 20;
-        cuenta1.saldo = 500;
-
-
-        cuenta2.numeroCuenta = 223456789;
-        cuenta2.nombre = "Joaquin";
-        cuenta2.edad = 20;
-        cuenta2.saldo = 30000;
-
 
         //Creacion de menu
 
@@ -29,8 +16,8 @@ public class CuentaPrincipal {
             switch (op) {
                 case 1:
                     double cuenta = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el numero de cuenta", "Consulta de saldo", JOptionPane.INFORMATION_MESSAGE));
-                    if(cuenta == cuenta1.numeroCuenta || cuenta == cuenta2.numeroCuenta){
-                        if(cuenta == cuenta1.numeroCuenta){
+                    if(cuenta == cuenta1.getNumeroCuenta() || cuenta == cuenta2.getNumeroCuenta()){
+                        if(cuenta == cuenta1.getNumeroCuenta()){
                             cuenta1.consultarSaldo();
                         } else{
                             cuenta2.consultarSaldo();
@@ -41,10 +28,10 @@ public class CuentaPrincipal {
                     break;
                 case 2:
                     double cuentaIngresar = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el numero de cuenta", "Ingresar efectivo", JOptionPane.INFORMATION_MESSAGE));
-                    if(cuentaIngresar == cuenta1.numeroCuenta || cuentaIngresar == cuenta2.numeroCuenta){
+                    if(cuentaIngresar == cuenta1.getNumeroCuenta() || cuentaIngresar == cuenta2.getNumeroCuenta()){
 
                         double monto = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el monto a depositar", "Ingresar efectivo", JOptionPane.INFORMATION_MESSAGE));
-                        if(cuentaIngresar == cuenta1.numeroCuenta){
+                        if(cuentaIngresar == cuenta1.getNumeroCuenta()){
                             cuenta1.depositar(monto);
                         } else{
                             cuenta2.depositar(monto);
@@ -56,9 +43,9 @@ public class CuentaPrincipal {
                 
                 case 3:
                 double cuentaRetirar = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el numero de cuenta", "Retirar efectivo", JOptionPane.INFORMATION_MESSAGE));
-                if(cuentaRetirar == cuenta1.numeroCuenta || cuentaRetirar == cuenta2.numeroCuenta){
+                if(cuentaRetirar == cuenta1.getNumeroCuenta() || cuentaRetirar == cuenta2.getNumeroCuenta()){
                     double monto = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el monto a retirar", "Retirar efectivo", JOptionPane.INFORMATION_MESSAGE));
-                    if(cuentaRetirar == cuenta1.numeroCuenta){
+                    if(cuentaRetirar == cuenta1.getNumeroCuenta()){
                         cuenta1.retirar(monto);
                     }else{
                         cuenta2.retirar(monto);
@@ -70,10 +57,10 @@ public class CuentaPrincipal {
 
                     double cuentaOrigen = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el numero de cuenta origen", "Transferencia", JOptionPane.INFORMATION_MESSAGE));
                     double cuentaDestino = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el numero de cuenta destino", "Transferencia", JOptionPane.INFORMATION_MESSAGE));
-                    if(cuentaOrigen == cuenta1.numeroCuenta || cuentaOrigen == cuenta2.numeroCuenta){
-                        if(cuentaDestino == cuenta1.numeroCuenta || cuentaDestino == cuenta2.numeroCuenta){
+                    if(cuentaOrigen == cuenta1.getNumeroCuenta() || cuentaOrigen == cuenta2.getNumeroCuenta()){
+                        if(cuentaDestino == cuenta1.getNumeroCuenta() || cuentaDestino == cuenta2.getNumeroCuenta()){
                             double monto = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el monto a transferir", "Transferencia", JOptionPane.INFORMATION_MESSAGE));
-                            if(cuentaOrigen == cuenta1.numeroCuenta){
+                            if(cuentaOrigen == cuenta1.getNumeroCuenta()){
                                 cuenta1.transferir(monto, cuenta2);
                             } else{
                                 cuenta2.transferir(monto, cuenta1);

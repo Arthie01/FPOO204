@@ -4,11 +4,18 @@ public class Cuenta {
 
     //Atributos de la cuenta
 
-    public double numeroCuenta;
-    String nombre;
-    int edad;
-    double saldo;
-    
+    private double numeroCuenta;
+    private String nombre;
+    private int edad;
+    private double saldo;
+
+    public Cuenta(double numeroCuenta, String nombre, int edad, double saldo) {
+        this.numeroCuenta = numeroCuenta;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.saldo = saldo;
+    }
+  
     //Metodos de cuenta
 
     //consultar saldo
@@ -41,7 +48,39 @@ public class Cuenta {
             JOptionPane.showMessageDialog(null, "Saldo insuficiente", "Transeferencias", JOptionPane.NO_OPTION);
         }
         
-    }    
+    }        
+    
+    public double getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(double numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     }
 

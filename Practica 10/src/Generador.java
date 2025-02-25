@@ -2,10 +2,16 @@ import javax.swing.JOptionPane;
 
 public class Generador {
     //Atributos para generar las contraseñas
-    public String longitud;
-    boolean mayusculas;
-    boolean minusculas;
+    private String longitud;
+    private boolean mayusculas;
+    private boolean minusculas;
 
+    public Generador(String longitud, boolean mayusculas, boolean minusculas) {
+        this.longitud = longitud;
+        this.mayusculas = mayusculas;
+        this.minusculas = minusculas;
+    }
+    
     //Metodo para generar contraseña, la longitud debe ser ingresada por el usuario y si no ingresa nada debe ser de longitud 8
 
     public String generador(String longitud, boolean mayusculas, boolean minusculas){
@@ -69,7 +75,31 @@ public class Generador {
                 JOptionPane.showMessageDialog(null, "La contraseña es débil");
             }
         
-        }
+        }    
+        
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
+    public boolean isMayusculas() {
+        return mayusculas;
+    }
+
+    public void setMayusculas(boolean mayusculas) {
+        this.mayusculas = mayusculas;
+    }
+
+    public boolean isMinusculas() {
+        return minusculas;
+    }
+
+    public void setMinusculas(boolean minusculas) {
+        this.minusculas = minusculas;
+    }
     }
 
 
