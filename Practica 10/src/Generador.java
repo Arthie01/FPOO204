@@ -6,6 +6,7 @@ public class Generador {
     private boolean mayusculas;
     private boolean minusculas;
 
+
     public Generador(String longitud, boolean mayusculas, boolean minusculas) {
         this.longitud = longitud;
         this.mayusculas = mayusculas;
