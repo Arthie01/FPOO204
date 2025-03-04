@@ -4,38 +4,28 @@ public class Vehiculo {
 
     private String placa;
     private String modelo;
-    private String capacidadCarga;
-    private Conductor conductor;
+    private double capacidadCarga;
+    private Conductor conductor; 
 
-    public Vehiculo(String placa, String modelo, String capacidadCarga) {
-        this.placa = placa;
-        this.modelo = modelo;
-        this.capacidadCarga = capacidadCarga;
+
+    public Vehiculo(String placa, String modelo, double capacidadCarga) {
+        this.placa = JOptionPane.showInputDialog("Ingrese la placa del vehículo:");
+        this.modelo = JOptionPane.showInputDialog("Ingrese el modelo del vehículo:");
+        this.capacidadCarga = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la capacidad de carga del vehículo (en kg):"));
+        this.conductor = asignarConductor(); 
     }
 
-
-        public String getPlaca() {
+    // Métodos getter
+    public String getPlaca() {
         return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getCapacidadCarga() {
+    public double getCapacidadCarga() {
         return capacidadCarga;
-    }
-
-    public void setCapacidadCarga(String capacidadCarga) {
-        this.capacidadCarga = capacidadCarga;
     }
 
     public Conductor getConductor() {
@@ -43,18 +33,27 @@ public class Vehiculo {
     }
 
 
-    public void asignarConductor(Conductor conductor) {
-        if (this.conductor == null) {
-            this.conductor = conductor;
-            JOptionPane.showMessageDialog(null, "Conductor asignado correctamente.");
-        } else if (this.conductor.getNombre().equals(conductor.getNombre())) {
-            JOptionPane.showMessageDialog(null, "Este conductor ya está asignado a este vehículo.", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "Este vehículo ya tiene un conductor asignado.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 
+    public void setCapacidadCarga(double capacidadCarga) {
+        this.capacidadCarga = capacidadCarga;
+    }
+
+    // Método para asignar un conductor (solo una vez)
+    private Conductor asignarConductor() {
+        JOptionPane.showMessageDialog(null, "Asignando conductor al vehículo...");
+        return new Conductor(null,null,null);
+    }
+
+    public void mostrarInformacion() {
+        JOptionPane.showMessageDialog(null, "Placa: " + placa + "\nModelo: " + modelo + "\nCapacidad de Carga: " + capacidadCarga + " kg" + "\nConductor: " + conductor.getNombre());
+    }
 
 
 

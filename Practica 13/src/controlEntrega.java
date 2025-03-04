@@ -1,31 +1,28 @@
 import javax.swing.JOptionPane;
 
 public class controlEntrega {
-
     private String numeroGuia;
     private String estado;
-    
 
-
-    public controlEntrega(String numeroGuia, String estado) {
+    // Constructor
+    public controlEntrega(String numeroGuia) {
         this.numeroGuia = numeroGuia;
         this.estado = "Pendiente";
     }
 
-        public String getNumeroGuia() {
-        return numeroGuia;
+    // Método para actualizar el estado
+    public void actualizarEstado() {
+        String nuevoEstado = JOptionPane.showInputDialog("Ingrese el nuevo estado (En tránsito/Entregado):");
+        if (nuevoEstado.equalsIgnoreCase("En tránsito") || nuevoEstado.equalsIgnoreCase("Entregado")) {
+            this.estado = nuevoEstado;
+        } else {
+            JOptionPane.showMessageDialog(null, "Estado inválido. Solo se permite 'En tránsito' o 'Entregado'.");
+        }
     }
 
-    public void setNumeroGuia(String numeroGuia) {
-        this.numeroGuia = numeroGuia;
+    // Método para mostrar información de la entrega
+    public void mostrarInformacion() {
+        JOptionPane.showMessageDialog(null, "Número de Guía: " + numeroGuia + "\nEstado: " + estado);
     }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
 }
+
