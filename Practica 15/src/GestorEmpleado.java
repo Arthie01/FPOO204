@@ -9,7 +9,7 @@ public class GestorEmpleado {
         empleados = new ArrayList<>();
     }
 
-    // Método para agregar un empleado
+    
     public void agregarEmpleado() {
         String[] tiposEmpleado = {"Conductor", "Administrativo"};
         int tipoSeleccionado = JOptionPane.showOptionDialog(
@@ -26,10 +26,10 @@ public class GestorEmpleado {
             String nombre = JOptionPane.showInputDialog("Ingrese el nombre del empleado:");
             double salario = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el salario del empleado:"));
     
-            if (tipoSeleccionado == 0) { // Conductor
+            if (tipoSeleccionado == 0) { 
                 String licencia = JOptionPane.showInputDialog("Ingrese la licencia del conductor:");
                 empleados.add(new Conductor(nombre, tipoSeleccionado, salario, licencia));
-            } else if (tipoSeleccionado == 1) { // Administrativo
+            } else if (tipoSeleccionado == 1) { 
                 String licencia = JOptionPane.showInputDialog("Ingrese la licencia del administrativo:");
                 String departamento = JOptionPane.showInputDialog("Ingrese el departamento del administrativo:");
                 empleados.add(new Administrativo(nombre, tipoSeleccionado, salario, licencia, departamento));
@@ -38,7 +38,7 @@ public class GestorEmpleado {
             }
             }
             
-            // Método para listar todos los empleados
+            
         public void listarEmpleados() {
             if (empleados.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No hay empleados registrados.");
@@ -56,7 +56,7 @@ public class GestorEmpleado {
                         lista.append("Departamento: ").append(((Administrativo) empleado).departamento).append("\n");
                     }
     
-                    lista.append("\n"); // Separador entre empleados
+                    lista.append("\n"); 
                 }
                 JOptionPane.showMessageDialog(null, lista.toString());
             }

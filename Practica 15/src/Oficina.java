@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Oficina {
     public static void main(String[] args) {
-    // Crear un objeto Empleado
+    
 
     GestorEmpleado gestor = new GestorEmpleado();
 
@@ -23,14 +23,14 @@ public class Oficina {
 
         switch (seleccion) {
             case 0:
-                gestor.agregarEmpleado(); // Delegar la responsabilidad al gestor
+                gestor.agregarEmpleado(); 
                 break;
             case 1:
-                gestor.listarEmpleados(); // Delegar la responsabilidad al gestor
+                gestor.listarEmpleados(); 
                 break;
             case 2:
                 JOptionPane.showMessageDialog(null, "Saliendo del sistema...");
-                return; // Salir del programa
+                return; 
             default:
                 JOptionPane.showMessageDialog(null, "Opción no válida.");
         }
